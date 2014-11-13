@@ -43,8 +43,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moc" eType="#//MoC"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="inputPort" eSuperTypes="#//Port"/>
-  <eClassifiers xsi:type="ecore:EClass" name="outputPort" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="inputPort" eSuperTypes="#//Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundProcess" eType="#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundPort" eType="#//inputPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="outputPort" eSuperTypes="#//Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundProcess" eType="#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundPort" eType="#//outputPort"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessConstructor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moc" eType="#//MoC"/>

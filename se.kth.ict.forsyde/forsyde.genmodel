@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/se.kth.ict.forsyde/src" modelPluginID="se.kth.ict.forsyde"
+    modelName="Forsyde" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>forsyde.ecore</foreignModel>
+  <genPackages prefix="Forsyde" disposableProviderFactory="true" ecorePackage="forsyde.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="forsyde.ecore#//MoC">
+      <genEnumLiterals ecoreEnumLiteral="forsyde.ecore#//MoC/UT"/>
+      <genEnumLiterals ecoreEnumLiteral="forsyde.ecore#//MoC/SDF"/>
+      <genEnumLiterals ecoreEnumLiteral="forsyde.ecore#//MoC/SY"/>
+      <genEnumLiterals ecoreEnumLiteral="forsyde.ecore#//MoC/T"/>
+      <genEnumLiterals ecoreEnumLiteral="forsyde.ecore#//MoC/DDE"/>
+      <genEnumLiterals ecoreEnumLiteral="forsyde.ecore#//MoC/CT"/>
+    </genEnums>
+    <genClasses ecoreClass="forsyde.ecore#//ProcessNetwork">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//ProcessNetwork/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forsyde.ecore#//ProcessNetwork/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forsyde.ecore#//ProcessNetwork/processes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forsyde.ecore#//ProcessNetwork/signals"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="forsyde.ecore#//Process">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//Process/name"/>
+    </genClasses>
+    <genClasses ecoreClass="forsyde.ecore#//LeafProcess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forsyde.ecore#//LeafProcess/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forsyde.ecore#//LeafProcess/processConstructor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forsyde.ecore#//LeafProcess/constructorArguments"/>
+    </genClasses>
+    <genClasses ecoreClass="forsyde.ecore#//CompositeProcess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forsyde.ecore#//CompositeProcess/ports"/>
+    </genClasses>
+    <genClasses ecoreClass="forsyde.ecore#//Signal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//Signal/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//Signal/moc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//Signal/dataType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forsyde.ecore#//Signal/sourceProcess"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forsyde.ecore#//Signal/sourcePort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forsyde.ecore#//Signal/targetProcess"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forsyde.ecore#//Signal/targetPort"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="forsyde.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//Port/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//Port/moc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//Port/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="forsyde.ecore#//inputPort"/>
+    <genClasses ecoreClass="forsyde.ecore#//outputPort"/>
+    <genClasses ecoreClass="forsyde.ecore#//ProcessConstructor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//ProcessConstructor/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//ProcessConstructor/moc"/>
+    </genClasses>
+    <genClasses ecoreClass="forsyde.ecore#//ConstructorArgument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//ConstructorArgument/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//ConstructorArgument/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forsyde.ecore#//ConstructorArgument/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
