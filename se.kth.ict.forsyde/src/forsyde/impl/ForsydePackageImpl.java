@@ -15,6 +15,7 @@ import forsyde.Signal;
 import forsyde.inputPort;
 import forsyde.outputPort;
 
+import forsyde.system;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -30,6 +31,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class ForsydePackageImpl extends EPackageImpl implements ForsydePackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass systemEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +181,24 @@ public class ForsydePackageImpl extends EPackageImpl implements ForsydePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getsystem() {
+		return systemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getsystem_ProcessNetworks() {
+		return (EReference)systemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getProcessNetwork() {
 		return processNetworkEClass;
 	}
@@ -283,6 +309,15 @@ public class ForsydePackageImpl extends EPackageImpl implements ForsydePackage {
 	 */
 	public EReference getCompositeProcess_Ports() {
 		return (EReference)compositeProcessEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCompositeProcess_Component() {
+		return (EReference)compositeProcessEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -547,6 +582,9 @@ public class ForsydePackageImpl extends EPackageImpl implements ForsydePackage {
 		isCreated = true;
 
 		// Create classes and their features
+		systemEClass = createEClass(SYSTEM);
+		createEReference(systemEClass, SYSTEM__PROCESS_NETWORKS);
+
 		processNetworkEClass = createEClass(PROCESS_NETWORK);
 		createEAttribute(processNetworkEClass, PROCESS_NETWORK__NAME);
 		createEReference(processNetworkEClass, PROCESS_NETWORK__PORTS);
@@ -563,6 +601,7 @@ public class ForsydePackageImpl extends EPackageImpl implements ForsydePackage {
 
 		compositeProcessEClass = createEClass(COMPOSITE_PROCESS);
 		createEReference(compositeProcessEClass, COMPOSITE_PROCESS__PORTS);
+		createEReference(compositeProcessEClass, COMPOSITE_PROCESS__COMPONENT);
 
 		signalEClass = createEClass(SIGNAL);
 		createEAttribute(signalEClass, SIGNAL__NAME);
@@ -633,6 +672,9 @@ public class ForsydePackageImpl extends EPackageImpl implements ForsydePackage {
 		outputPortEClass.getESuperTypes().add(this.getPort());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(systemEClass, system.class, "system", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getsystem_ProcessNetworks(), this.getProcessNetwork(), null, "processNetworks", null, 1, -1, system.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(processNetworkEClass, ProcessNetwork.class, "ProcessNetwork", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProcessNetwork_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProcessNetwork.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProcessNetwork_Ports(), this.getPort(), null, "ports", null, 0, -1, ProcessNetwork.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -649,6 +691,7 @@ public class ForsydePackageImpl extends EPackageImpl implements ForsydePackage {
 
 		initEClass(compositeProcessEClass, CompositeProcess.class, "CompositeProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCompositeProcess_Ports(), this.getPort(), null, "ports", null, 0, -1, CompositeProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompositeProcess_Component(), this.getProcessNetwork(), null, "component", null, 1, 1, CompositeProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(signalEClass, Signal.class, "Signal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSignal_Name(), ecorePackage.getEString(), "name", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -72,6 +72,29 @@ public class ForsydeItemProviderAdapterFactory extends ForsydeAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link forsyde.system} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected systemItemProvider systemItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link forsyde.system}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createsystemAdapter() {
+		if (systemItemProvider == null) {
+			systemItemProvider = new systemItemProvider(this);
+		}
+
+		return systemItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link forsyde.ProcessNetwork} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -354,6 +377,7 @@ public class ForsydeItemProviderAdapterFactory extends ForsydeAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
+		if (systemItemProvider != null) systemItemProvider.dispose();
 		if (processNetworkItemProvider != null) processNetworkItemProvider.dispose();
 		if (leafProcessItemProvider != null) leafProcessItemProvider.dispose();
 		if (compositeProcessItemProvider != null) compositeProcessItemProvider.dispose();

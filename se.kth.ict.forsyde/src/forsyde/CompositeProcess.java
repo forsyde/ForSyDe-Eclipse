@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link forsyde.CompositeProcess#getPorts <em>Ports</em>}</li>
+ *   <li>{@link forsyde.CompositeProcess#getComponent <em>Component</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,5 +37,31 @@ public interface CompositeProcess extends forsyde.Process {
 	 * @generated
 	 */
 	EList<Port> getPorts();
+
+	/**
+	 * Returns the value of the '<em><b>Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Component</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component</em>' reference.
+	 * @see #setComponent(ProcessNetwork)
+	 * @see forsyde.ForsydePackage#getCompositeProcess_Component()
+	 * @model required="true"
+	 * @generated
+	 */
+	ProcessNetwork getComponent();
+
+	/**
+	 * Sets the value of the '{@link forsyde.CompositeProcess#getComponent <em>Component</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component</em>' reference.
+	 * @see #getComponent()
+	 * @generated
+	 */
+	void setComponent(ProcessNetwork value);
 
 } // CompositeProcess

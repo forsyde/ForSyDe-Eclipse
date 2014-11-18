@@ -13,6 +13,7 @@ import forsyde.Signal;
 import forsyde.inputPort;
 import forsyde.outputPort;
 
+import forsyde.system;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -77,6 +78,10 @@ public class ForsydeAdapterFactory extends AdapterFactoryImpl {
 	protected ForsydeSwitch<Adapter> modelSwitch =
 		new ForsydeSwitch<Adapter>() {
 			@Override
+			public Adapter casesystem(system object) {
+				return createsystemAdapter();
+			}
+			@Override
 			public Adapter caseProcessNetwork(ProcessNetwork object) {
 				return createProcessNetworkAdapter();
 			}
@@ -135,6 +140,20 @@ public class ForsydeAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link forsyde.system <em>system</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see forsyde.system
+	 * @generated
+	 */
+	public Adapter createsystemAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link forsyde.ProcessNetwork <em>Process Network</em>}'.

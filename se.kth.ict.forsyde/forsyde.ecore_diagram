@@ -15,7 +15,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW3RyGtNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EClass" href="forsyde.ecore#//ProcessNetwork"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW2qsWtNEeSsPpDZ0t9hcA" x="492" y="24"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW2qsWtNEeSsPpDZ0t9hcA" x="600" y="216"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xW3RyWtNEeSsPpDZ0t9hcA" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_xW3Ry2tNEeSsPpDZ0t9hcA" type="5001"/>
@@ -32,7 +32,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW341WtNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EClass" href="forsyde.ecore#//Process"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW3RymtNEeSsPpDZ0t9hcA" x="420" y="372"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW3RymtNEeSsPpDZ0t9hcA" x="420" y="492"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xW341mtNEeSsPpDZ0t9hcA" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_xW342GtNEeSsPpDZ0t9hcA" type="5001"/>
@@ -49,7 +49,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW4f4mtNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EClass" href="forsyde.ecore#//LeafProcess"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW3412tNEeSsPpDZ0t9hcA" x="168" y="216"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW3412tNEeSsPpDZ0t9hcA" x="240" y="336"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xW4f42tNEeSsPpDZ0t9hcA" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_xW4f5WtNEeSsPpDZ0t9hcA" type="5001"/>
@@ -66,7 +66,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW4f7mtNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EClass" href="forsyde.ecore#//CompositeProcess"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW4f5GtNEeSsPpDZ0t9hcA" x="672" y="216"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW4f5GtNEeSsPpDZ0t9hcA" x="588" y="24"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xW5G8GtNEeSsPpDZ0t9hcA" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_xW5G8mtNEeSsPpDZ0t9hcA" type="5001"/>
@@ -83,7 +83,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW5G-2tNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EClass" href="forsyde.ecore#//Signal"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW5G8WtNEeSsPpDZ0t9hcA" x="480" y="216"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW5G8WtNEeSsPpDZ0t9hcA" x="588" y="336"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xW5uAGtNEeSsPpDZ0t9hcA" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_xW5uAmtNEeSsPpDZ0t9hcA" type="5001"/>
@@ -100,7 +100,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW5uC2tNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EClass" href="forsyde.ecore#//Port"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW5uAWtNEeSsPpDZ0t9hcA" x="672" y="372"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW5uAWtNEeSsPpDZ0t9hcA" x="876" y="492"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xW5uDGtNEeSsPpDZ0t9hcA" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_xW6VEGtNEeSsPpDZ0t9hcA" type="5001"/>
@@ -117,7 +117,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW6VGWtNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EClass" href="forsyde.ecore#//inputPort"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW5uDWtNEeSsPpDZ0t9hcA" x="936" y="216"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW5uDWtNEeSsPpDZ0t9hcA" x="768" y="336"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xW6VGmtNEeSsPpDZ0t9hcA" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_xW6VHGtNEeSsPpDZ0t9hcA" type="5001"/>
@@ -134,7 +134,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW68JmtNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EClass" href="forsyde.ecore#//outputPort"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW6VG2tNEeSsPpDZ0t9hcA" x="1068" y="216"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW6VG2tNEeSsPpDZ0t9hcA" x="900" y="336"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xW68J2tNEeSsPpDZ0t9hcA" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_xW68KWtNEeSsPpDZ0t9hcA" type="5001"/>
@@ -151,7 +151,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW7jMmtNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EClass" href="forsyde.ecore#//ProcessConstructor"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW68KGtNEeSsPpDZ0t9hcA" x="24" y="372"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW68KGtNEeSsPpDZ0t9hcA" x="24" y="492"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xW7jM2tNEeSsPpDZ0t9hcA" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_xW7jNWtNEeSsPpDZ0t9hcA" type="5001"/>
@@ -168,7 +168,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW7jPmtNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EClass" href="forsyde.ecore#//ConstructorArgument"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW7jNGtNEeSsPpDZ0t9hcA" x="216" y="372"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW7jNGtNEeSsPpDZ0t9hcA" x="216" y="492"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_xW8KQGtNEeSsPpDZ0t9hcA" type="2005" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_xW8KQmtNEeSsPpDZ0t9hcA" type="5005"/>
@@ -181,7 +181,24 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_xW8KSGtNEeSsPpDZ0t9hcA"/>
     </children>
     <element xmi:type="ecore:EEnum" href="forsyde.ecore#//MoC"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW8KQWtNEeSsPpDZ0t9hcA" x="876" y="24"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xW8KQWtNEeSsPpDZ0t9hcA" x="996" y="24"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_5C3QsGvoEeS5qbCeDNfJVw" type="2001" fontName="Ubuntu">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5C3QsmvoEeS5qbCeDNfJVw" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_5C3Qs2voEeS5qbCeDNfJVw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5C3QtGvoEeS5qbCeDNfJVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5C3QtWvoEeS5qbCeDNfJVw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_5C3QtmvoEeS5qbCeDNfJVw" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5C3Qt2voEeS5qbCeDNfJVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5C3QuGvoEeS5qbCeDNfJVw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_5C3QuWvoEeS5qbCeDNfJVw" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5C3QumvoEeS5qbCeDNfJVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5C3Qu2voEeS5qbCeDNfJVw"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="forsyde.ecore#//system"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5C3QsWvoEeS5qbCeDNfJVw" x="768" y="24"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_XlV4oWtGEeSsPpDZ0t9hcA"/>
   <element xmi:type="ecore:EPackage" href="forsyde.ecore#/"/>
@@ -194,9 +211,9 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xX5MgWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//ProcessNetwork/ports"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xX5MgmtNEeSsPpDZ0t9hcA" points="[0, 0, -173, -279]$[290, 128, 117, -151]$[290, 218, 117, -61]$[173, 279, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xX5MgmtNEeSsPpDZ0t9hcA" points="[0, 0, -291, -211]$[384, 60, 93, -151]$[384, 150, 93, -61]$[291, 211, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1ntGtNEeSsPpDZ0t9hcA" id="(0.7431192660550459,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY2OwGtNEeSsPpDZ0t9hcA" id="(0.6124031007751938,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY2OwGtNEeSsPpDZ0t9hcA" id="(0.6589147286821705,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xX7owGtNEeSsPpDZ0t9hcA" type="4003" source="_xW2qsGtNEeSsPpDZ0t9hcA" target="_xW3RyWtNEeSsPpDZ0t9hcA">
     <children xmi:type="notation:DecorationNode" xmi:id="_xX8P0GtNEeSsPpDZ0t9hcA" type="6002">
@@ -207,9 +224,9 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xX7owWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//ProcessNetwork/processes"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xX7owmtNEeSsPpDZ0t9hcA" points="[0, 0, 65, -279]$[-148, 128, -83, -151]$[-148, 218, -83, -61]$[-65, 279, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xX7owmtNEeSsPpDZ0t9hcA" points="[0, 0, 148, -211]$[-148, 60, 0, -151]$[-148, 211, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1nsmtNEeSsPpDZ0t9hcA" id="(0.24770642201834864,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1ns2tNEeSsPpDZ0t9hcA" id="(0.3333333333333333,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1ns2tNEeSsPpDZ0t9hcA" id="(0.5092592592592593,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xX-FAGtNEeSsPpDZ0t9hcA" type="4003" source="_xW2qsGtNEeSsPpDZ0t9hcA" target="_xW5G8GtNEeSsPpDZ0t9hcA">
     <children xmi:type="notation:DecorationNode" xmi:id="_xX-FA2tNEeSsPpDZ0t9hcA" type="6002">
@@ -220,7 +237,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xX-FAWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//ProcessNetwork/signals"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xX-FAmtNEeSsPpDZ0t9hcA" points="[0, 0, 0, -128]$[0, 128, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xX-FAmtNEeSsPpDZ0t9hcA" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzLcmtNEeSsPpDZ0t9hcA" id="(0.4954128440366973,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzLc2tNEeSsPpDZ0t9hcA" id="(0.49612403100775193,0.0)"/>
   </edges>
@@ -233,9 +250,9 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xYC9gWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//LeafProcess/ports"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYC9gmtNEeSsPpDZ0t9hcA" points="[0, 0, -440, -99]$[29, 38, -411, -61]$[440, 99, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY0ZkWtNEeSsPpDZ0t9hcA" id="(0.8,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY0ZkmtNEeSsPpDZ0t9hcA" id="(0.11627906976744186,0.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYC9gmtNEeSsPpDZ0t9hcA" points="[0, 0, -578, -99]$[21, 38, -557, -61]$[578, 99, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY0ZkWtNEeSsPpDZ0t9hcA" id="(0.8235294117647058,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY0ZkmtNEeSsPpDZ0t9hcA" id="(0.09302325581395349,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xYFZwGtNEeSsPpDZ0t9hcA" type="4003" source="_xW341mtNEeSsPpDZ0t9hcA" target="_xW7jM2tNEeSsPpDZ0t9hcA">
     <children xmi:type="notation:DecorationNode" xmi:id="_xYFZw2tNEeSsPpDZ0t9hcA" type="6002">
@@ -246,15 +263,15 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xYFZwWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//LeafProcess/constructorArguments"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYFZwmtNEeSsPpDZ0t9hcA" points="[0, 0, -79, -99]$[79, 99, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzyg2tNEeSsPpDZ0t9hcA" id="(0.4,1.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYFZwmtNEeSsPpDZ0t9hcA" points="[0, 0, 0, -99]$[0, 99, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzyg2tNEeSsPpDZ0t9hcA" id="(0.49411764705882355,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY0ZkGtNEeSsPpDZ0t9hcA" id="(0.49645390070921985,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xYH2AGtNEeSsPpDZ0t9hcA" type="4004" source="_xW341mtNEeSsPpDZ0t9hcA" target="_xW3RyWtNEeSsPpDZ0t9hcA">
     <styles xmi:type="notation:FontStyle" xmi:id="_xYH2AWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYH2AmtNEeSsPpDZ0t9hcA" points="[0, 0, -211, -99]$[31, 38, -180, -61]$[211, 99, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1AoGtNEeSsPpDZ0t9hcA" id="(0.6,1.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYH2AmtNEeSsPpDZ0t9hcA" points="[0, 0, -135, -99]$[20, 38, -115, -61]$[135, 99, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1AoGtNEeSsPpDZ0t9hcA" id="(0.6588235294117647,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1AoWtNEeSsPpDZ0t9hcA" id="(0.16666666666666666,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xYJEIGtNEeSsPpDZ0t9hcA" type="4003" source="_xW4f42tNEeSsPpDZ0t9hcA" target="_xW5uAGtNEeSsPpDZ0t9hcA">
@@ -266,16 +283,16 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xYJEIWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//CompositeProcess/ports"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYJEImtNEeSsPpDZ0t9hcA" points="[0, 0, 0, -99]$[0, 99, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzygWtNEeSsPpDZ0t9hcA" id="(0.4957983193277311,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzygmtNEeSsPpDZ0t9hcA" id="(0.4883720930232558,0.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYJEImtNEeSsPpDZ0t9hcA" points="[0, 0, -310, -405]$[16, 74, -294, -331]$[470, 254, 160, -151]$[470, 344, 160, -61]$[310, 405, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzygWtNEeSsPpDZ0t9hcA" id="(0.7478991596638656,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzygmtNEeSsPpDZ0t9hcA" id="(0.8294573643410853,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xYLgYGtNEeSsPpDZ0t9hcA" type="4004" source="_xW4f42tNEeSsPpDZ0t9hcA" target="_xW3RyWtNEeSsPpDZ0t9hcA">
     <styles xmi:type="notation:FontStyle" xmi:id="_xYLgYWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYLgYmtNEeSsPpDZ0t9hcA" points="[0, 0, 193, -99]$[-45, 38, 148, -61]$[-193, 99, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYLgYmtNEeSsPpDZ0t9hcA" points="[0, 0, 163, -405]$[-242, 254, -79, -151]$[-242, 344, -79, -61]$[-163, 405, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzLdGtNEeSsPpDZ0t9hcA" id="(0.24369747899159663,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzygGtNEeSsPpDZ0t9hcA" id="(0.8240740740740741,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzygGtNEeSsPpDZ0t9hcA" id="(0.3425925925925926,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xYMugGtNEeSsPpDZ0t9hcA" type="4002" source="_xW5G8GtNEeSsPpDZ0t9hcA" target="_xW3RyWtNEeSsPpDZ0t9hcA">
     <children xmi:type="notation:DecorationNode" xmi:id="_xYMug2tNEeSsPpDZ0t9hcA" type="6001">
@@ -286,9 +303,9 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xYMugWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//Signal/sourceProcess"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYMugmtNEeSsPpDZ0t9hcA" points="[0, 0, 35, -60]$[-35, 60, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYx9UGtNEeSsPpDZ0t9hcA" id="(0.1937984496124031,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYx9UWtNEeSsPpDZ0t9hcA" id="(0.5,0.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYMugmtNEeSsPpDZ0t9hcA" points="[0, 0, 141, -60]$[-141, 60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYx9UGtNEeSsPpDZ0t9hcA" id="(0.3953488372093023,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYx9UWtNEeSsPpDZ0t9hcA" id="(0.7037037037037037,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xYPKwGtNEeSsPpDZ0t9hcA" type="4002" source="_xW5G8GtNEeSsPpDZ0t9hcA" target="_xW5uAGtNEeSsPpDZ0t9hcA">
     <children xmi:type="notation:DecorationNode" xmi:id="_xYPKw2tNEeSsPpDZ0t9hcA" type="6001">
@@ -299,9 +316,9 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xYPKwWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//Signal/sourcePort"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYPKwmtNEeSsPpDZ0t9hcA" points="[0, 0, -129, -60]$[129, 60, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYykYmtNEeSsPpDZ0t9hcA" id="(0.7984496124031008,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYykY2tNEeSsPpDZ0t9hcA" id="(0.3643410852713178,0.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYPKwmtNEeSsPpDZ0t9hcA" points="[0, 0, -245, -60]$[245, 60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYykYmtNEeSsPpDZ0t9hcA" id="(0.5968992248062015,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYykY2tNEeSsPpDZ0t9hcA" id="(0.1937984496124031,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xYRnAGtNEeSsPpDZ0t9hcA" type="4002" source="_xW5G8GtNEeSsPpDZ0t9hcA" target="_xW3RyWtNEeSsPpDZ0t9hcA">
     <children xmi:type="notation:DecorationNode" xmi:id="_xYRnA2tNEeSsPpDZ0t9hcA" type="6001">
@@ -312,9 +329,9 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xYRnAWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//Signal/targetProcess"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYRnAmtNEeSsPpDZ0t9hcA" points="[0, 0, 43, -60]$[-43, 60, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzLcGtNEeSsPpDZ0t9hcA" id="(0.3953488372093023,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzLcWtNEeSsPpDZ0t9hcA" id="(0.6666666666666666,0.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYRnAmtNEeSsPpDZ0t9hcA" points="[0, 0, 125, -60]$[-125, 60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzLcGtNEeSsPpDZ0t9hcA" id="(0.1937984496124031,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYzLcWtNEeSsPpDZ0t9hcA" id="(0.6111111111111112,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xYUDQGtNEeSsPpDZ0t9hcA" type="4002" source="_xW5G8GtNEeSsPpDZ0t9hcA" target="_xW5uAGtNEeSsPpDZ0t9hcA">
     <children xmi:type="notation:DecorationNode" xmi:id="_xYUDQ2tNEeSsPpDZ0t9hcA" type="6001">
@@ -325,23 +342,23 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xYUDQWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//Signal/targetPort"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYUDQmtNEeSsPpDZ0t9hcA" points="[0, 0, -139, -60]$[139, 60, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYykYGtNEeSsPpDZ0t9hcA" id="(0.5968992248062015,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYykYWtNEeSsPpDZ0t9hcA" id="(0.24031007751937986,0.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYUDQmtNEeSsPpDZ0t9hcA" points="[0, 0, -232, -60]$[232, 60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYykYGtNEeSsPpDZ0t9hcA" id="(0.7984496124031008,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xYykYWtNEeSsPpDZ0t9hcA" id="(0.29457364341085274,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xYWfgGtNEeSsPpDZ0t9hcA" type="4004" source="_xW5uDGtNEeSsPpDZ0t9hcA" target="_xW5uAGtNEeSsPpDZ0t9hcA">
     <styles xmi:type="notation:FontStyle" xmi:id="_xYWfgWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYWfgmtNEeSsPpDZ0t9hcA" points="[0, 0, 212, -99]$[-52, 38, 160, -61]$[-212, 99, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1nsGtNEeSsPpDZ0t9hcA" id="(0.5,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1nsWtNEeSsPpDZ0t9hcA" id="(0.7441860465116279,0.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYWfgmtNEeSsPpDZ0t9hcA" points="[0, 0, -111, -99]$[39, 38, -72, -61]$[111, 99, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1nsGtNEeSsPpDZ0t9hcA" id="(0.6666666666666666,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1nsWtNEeSsPpDZ0t9hcA" id="(0.3953488372093023,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xYXtoGtNEeSsPpDZ0t9hcA" type="4004" source="_xW6VGmtNEeSsPpDZ0t9hcA" target="_xW5uAGtNEeSsPpDZ0t9hcA">
     <styles xmi:type="notation:FontStyle" xmi:id="_xYXtoWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYXtomtNEeSsPpDZ0t9hcA" points="[0, 0, 332, -99]$[-56, 38, 276, -61]$[-332, 99, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xYXtomtNEeSsPpDZ0t9hcA" points="[0, 0, 0, -99]$[0, 99, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1AomtNEeSsPpDZ0t9hcA" id="(0.49382716049382713,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1Ao2tNEeSsPpDZ0t9hcA" id="(0.8682170542635659,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xY1Ao2tNEeSsPpDZ0t9hcA" id="(0.49612403100775193,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xaJ2UGtNEeSsPpDZ0t9hcA" type="4003" source="_xW341mtNEeSsPpDZ0t9hcA" target="_xW68J2tNEeSsPpDZ0t9hcA">
     <children xmi:type="notation:DecorationNode" xmi:id="_xaJ2U2tNEeSsPpDZ0t9hcA" type="6002">
@@ -352,8 +369,82 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xaJ2UWtNEeSsPpDZ0t9hcA" fontName="Ubuntu"/>
     <element xmi:type="ecore:EReference" href="forsyde.ecore#//LeafProcess/processConstructor"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xaJ2UmtNEeSsPpDZ0t9hcA" points="[0, 0, 98, -99]$[-98, 99, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x0OjMGtNEeSsPpDZ0t9hcA" id="(0.2,1.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xaJ2UmtNEeSsPpDZ0t9hcA" points="[0, 0, 173, -99]$[-173, 99, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x0OjMGtNEeSsPpDZ0t9hcA" id="(0.24705882352941178,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x0OjMWtNEeSsPpDZ0t9hcA" id="(0.49606299212598426,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5C9XUGvoEeS5qbCeDNfJVw" type="4002" source="_xW5uDGtNEeSsPpDZ0t9hcA" target="_xW3RyWtNEeSsPpDZ0t9hcA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5C9-YGvoEeS5qbCeDNfJVw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5C9-YWvoEeS5qbCeDNfJVw" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_5C9-YmvoEeS5qbCeDNfJVw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5C9-Y2voEeS5qbCeDNfJVw" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5C9XUWvoEeS5qbCeDNfJVw" fontName="Ubuntu"/>
+    <element xmi:type="ecore:EReference" href="forsyde.ecore#//inputPort/boundProcess"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5C9XUmvoEeS5qbCeDNfJVw" points="[0, 0, 292, -99]$[-22, 38, 270, -61]$[-292, 99, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5lxwgGvoEeS5qbCeDNfJVw" id="(0.3333333333333333,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5lxwgWvoEeS5qbCeDNfJVw" id="(0.8055555555555556,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5DBBsGvoEeS5qbCeDNfJVw" type="4002" source="_xW5uDGtNEeSsPpDZ0t9hcA" target="_xW5uDGtNEeSsPpDZ0t9hcA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5DBBs2voEeS5qbCeDNfJVw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5DBBtGvoEeS5qbCeDNfJVw" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_5DBBtWvoEeS5qbCeDNfJVw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5DBBtmvoEeS5qbCeDNfJVw" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5DBBsWvoEeS5qbCeDNfJVw" fontName="Ubuntu"/>
+    <element xmi:type="ecore:EReference" href="forsyde.ecore#//inputPort/boundPort"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5DBBsmvoEeS5qbCeDNfJVw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5DEFAGvoEeS5qbCeDNfJVw" type="4002" source="_xW6VGmtNEeSsPpDZ0t9hcA" target="_xW3RyWtNEeSsPpDZ0t9hcA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5DEFA2voEeS5qbCeDNfJVw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5DEFBGvoEeS5qbCeDNfJVw" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_5DEFBWvoEeS5qbCeDNfJVw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5DEFBmvoEeS5qbCeDNfJVw" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5DEFAWvoEeS5qbCeDNfJVw" fontName="Ubuntu"/>
+    <element xmi:type="ecore:EReference" href="forsyde.ecore#//outputPort/boundProcess"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5DEFAmvoEeS5qbCeDNfJVw" points="[0, 0, 410, -99]$[-16, 38, 394, -61]$[-410, 99, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5lqbwGvoEeS5qbCeDNfJVw" id="(0.24691358024691357,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5lrC0GvoEeS5qbCeDNfJVw" id="(0.8981481481481481,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5DHIUGvoEeS5qbCeDNfJVw" type="4002" source="_xW6VGmtNEeSsPpDZ0t9hcA" target="_xW6VGmtNEeSsPpDZ0t9hcA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5DHIU2voEeS5qbCeDNfJVw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5DHIVGvoEeS5qbCeDNfJVw" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_5DHIVWvoEeS5qbCeDNfJVw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5DHIVmvoEeS5qbCeDNfJVw" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5DHIUWvoEeS5qbCeDNfJVw" fontName="Ubuntu"/>
+    <element xmi:type="ecore:EReference" href="forsyde.ecore#//outputPort/boundPort"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5DHIUmvoEeS5qbCeDNfJVw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5FNaEGvoEeS5qbCeDNfJVw" type="4002" source="_xW4f42tNEeSsPpDZ0t9hcA" target="_xW2qsGtNEeSsPpDZ0t9hcA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5FOBIGvoEeS5qbCeDNfJVw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5FOBIWvoEeS5qbCeDNfJVw" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_5FOBImvoEeS5qbCeDNfJVw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5FOBI2voEeS5qbCeDNfJVw" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5FNaEWvoEeS5qbCeDNfJVw" fontName="Ubuntu"/>
+    <element xmi:type="ecore:EReference" href="forsyde.ecore#//CompositeProcess/component"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5FNaEmvoEeS5qbCeDNfJVw" points="[0, 0, 0, -135]$[0, 135, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5lsQ8GvoEeS5qbCeDNfJVw" id="(0.4957983193277311,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5lsQ8WvoEeS5qbCeDNfJVw" id="(0.4954128440366973,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_GvZnQGvrEeS5qbCeDNfJVw" type="4003" source="_5C3QsGvoEeS5qbCeDNfJVw" target="_xW2qsGtNEeSsPpDZ0t9hcA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_GvZnQ2vrEeS5qbCeDNfJVw" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GvZnRGvrEeS5qbCeDNfJVw" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_GvaOUGvrEeS5qbCeDNfJVw" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GvaOUWvrEeS5qbCeDNfJVw" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_GvZnQWvrEeS5qbCeDNfJVw" fontName="Ubuntu"/>
+    <element xmi:type="ecore:EReference" href="forsyde.ecore#//system/processNetworks"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GvZnQmvrEeS5qbCeDNfJVw" points="[0, 0, 121, -135]$[-30, 74, 91, -61]$[-121, 135, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LlJ1QGvrEeS5qbCeDNfJVw" id="(0.49122807017543857,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LlKcUGvrEeS5qbCeDNfJVw" id="(0.7431192660550459,0.0)"/>
   </edges>
 </notation:Diagram>

@@ -14,6 +14,7 @@ import forsyde.Signal;
 import forsyde.inputPort;
 import forsyde.outputPort;
 
+import forsyde.system;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -67,6 +68,7 @@ public class ForsydeFactoryImpl extends EFactoryImpl implements ForsydeFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ForsydePackage.SYSTEM: return createsystem();
 			case ForsydePackage.PROCESS_NETWORK: return createProcessNetwork();
 			case ForsydePackage.LEAF_PROCESS: return createLeafProcess();
 			case ForsydePackage.COMPOSITE_PROCESS: return createCompositeProcess();
@@ -108,6 +110,16 @@ public class ForsydeFactoryImpl extends EFactoryImpl implements ForsydeFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public system createsystem() {
+		systemImpl system = new systemImpl();
+		return system;
 	}
 
 	/**

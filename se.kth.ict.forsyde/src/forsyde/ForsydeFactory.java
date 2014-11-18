@@ -22,6 +22,15 @@ public interface ForsydeFactory extends EFactory {
 	ForsydeFactory eINSTANCE = forsyde.impl.ForsydeFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>system</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>system</em>'.
+	 * @generated
+	 */
+	system createsystem();
+
+	/**
 	 * Returns a new object of class '<em>Process Network</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

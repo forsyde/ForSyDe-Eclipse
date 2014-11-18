@@ -3,9 +3,9 @@
 package forsyde.provider;
 
 
-import forsyde.CompositeProcess;
 import forsyde.ForsydeFactory;
 import forsyde.ForsydePackage;
+import forsyde.system;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,26 +13,40 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link forsyde.CompositeProcess} object.
+ * This is the item provider adapter for a {@link forsyde.system} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CompositeProcessItemProvider extends ProcessItemProvider {
+public class systemItemProvider 
+	extends ItemProviderAdapter
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CompositeProcessItemProvider(AdapterFactory adapterFactory) {
+	public systemItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,31 +61,8 @@ public class CompositeProcessItemProvider extends ProcessItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addComponentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Component feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addComponentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CompositeProcess_component_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CompositeProcess_component_feature", "_UI_CompositeProcess_type"),
-				 ForsydePackage.Literals.COMPOSITE_PROCESS__COMPONENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -86,7 +77,7 @@ public class CompositeProcessItemProvider extends ProcessItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ForsydePackage.Literals.COMPOSITE_PROCESS__PORTS);
+			childrenFeatures.add(ForsydePackage.Literals.SYSTEM__PROCESS_NETWORKS);
 		}
 		return childrenFeatures;
 	}
@@ -105,14 +96,14 @@ public class CompositeProcessItemProvider extends ProcessItemProvider {
 	}
 
 	/**
-	 * This returns CompositeProcess.gif.
+	 * This returns system.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CompositeProcess"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/system"));
 	}
 
 	/**
@@ -123,10 +114,7 @@ public class CompositeProcessItemProvider extends ProcessItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CompositeProcess)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_CompositeProcess_type") :
-			getString("_UI_CompositeProcess_type") + " " + label;
+		return getString("_UI_system_type");
 	}
 	
 
@@ -141,8 +129,8 @@ public class CompositeProcessItemProvider extends ProcessItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(CompositeProcess.class)) {
-			case ForsydePackage.COMPOSITE_PROCESS__PORTS:
+		switch (notification.getFeatureID(system.class)) {
+			case ForsydePackage.SYSTEM__PROCESS_NETWORKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -162,13 +150,19 @@ public class CompositeProcessItemProvider extends ProcessItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ForsydePackage.Literals.COMPOSITE_PROCESS__PORTS,
-				 ForsydeFactory.eINSTANCE.createinputPort()));
+				(ForsydePackage.Literals.SYSTEM__PROCESS_NETWORKS,
+				 ForsydeFactory.eINSTANCE.createProcessNetwork()));
+	}
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ForsydePackage.Literals.COMPOSITE_PROCESS__PORTS,
-				 ForsydeFactory.eINSTANCE.createoutputPort()));
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ForsydeEditPlugin.INSTANCE;
 	}
 
 }

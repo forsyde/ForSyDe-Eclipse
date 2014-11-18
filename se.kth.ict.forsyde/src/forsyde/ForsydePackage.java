@@ -58,6 +58,43 @@ public interface ForsydePackage extends EPackage {
 	ForsydePackage eINSTANCE = forsyde.impl.ForsydePackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link forsyde.impl.systemImpl <em>system</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see forsyde.impl.systemImpl
+	 * @see forsyde.impl.ForsydePackageImpl#getsystem()
+	 * @generated
+	 */
+	int SYSTEM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Process Networks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__PROCESS_NETWORKS = 0;
+
+	/**
+	 * The number of structural features of the '<em>system</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>system</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link forsyde.impl.ProcessNetworkImpl <em>Process Network</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +102,7 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getProcessNetwork()
 	 * @generated
 	 */
-	int PROCESS_NETWORK = 0;
+	int PROCESS_NETWORK = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -129,7 +166,7 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getProcess()
 	 * @generated
 	 */
-	int PROCESS = 1;
+	int PROCESS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -166,7 +203,7 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getLeafProcess()
 	 * @generated
 	 */
-	int LEAF_PROCESS = 2;
+	int LEAF_PROCESS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -230,7 +267,7 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getCompositeProcess()
 	 * @generated
 	 */
-	int COMPOSITE_PROCESS = 3;
+	int COMPOSITE_PROCESS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -251,13 +288,22 @@ public interface ForsydePackage extends EPackage {
 	int COMPOSITE_PROCESS__PORTS = PROCESS_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_PROCESS__COMPONENT = PROCESS_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Composite Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_PROCESS_FEATURE_COUNT = PROCESS_FEATURE_COUNT + 1;
+	int COMPOSITE_PROCESS_FEATURE_COUNT = PROCESS_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Composite Process</em>' class.
@@ -276,7 +322,7 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getSignal()
 	 * @generated
 	 */
-	int SIGNAL = 4;
+	int SIGNAL = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -367,7 +413,7 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getPort()
 	 * @generated
 	 */
-	int PORT = 5;
+	int PORT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -422,7 +468,7 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getinputPort()
 	 * @generated
 	 */
-	int INPUT_PORT = 6;
+	int INPUT_PORT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -495,7 +541,7 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getoutputPort()
 	 * @generated
 	 */
-	int OUTPUT_PORT = 7;
+	int OUTPUT_PORT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -568,7 +614,7 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getProcessConstructor()
 	 * @generated
 	 */
-	int PROCESS_CONSTRUCTOR = 8;
+	int PROCESS_CONSTRUCTOR = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -614,7 +660,7 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getConstructorArgument()
 	 * @generated
 	 */
-	int CONSTRUCTOR_ARGUMENT = 9;
+	int CONSTRUCTOR_ARGUMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -669,8 +715,29 @@ public interface ForsydePackage extends EPackage {
 	 * @see forsyde.impl.ForsydePackageImpl#getMoC()
 	 * @generated
 	 */
-	int MO_C = 10;
+	int MO_C = 11;
 
+
+	/**
+	 * Returns the meta object for class '{@link forsyde.system <em>system</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>system</em>'.
+	 * @see forsyde.system
+	 * @generated
+	 */
+	EClass getsystem();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link forsyde.system#getProcessNetworks <em>Process Networks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Process Networks</em>'.
+	 * @see forsyde.system#getProcessNetworks()
+	 * @see #getsystem()
+	 * @generated
+	 */
+	EReference getsystem_ProcessNetworks();
 
 	/**
 	 * Returns the meta object for class '{@link forsyde.ProcessNetwork <em>Process Network</em>}'.
@@ -810,6 +877,17 @@ public interface ForsydePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCompositeProcess_Ports();
+
+	/**
+	 * Returns the meta object for the reference '{@link forsyde.CompositeProcess#getComponent <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Component</em>'.
+	 * @see forsyde.CompositeProcess#getComponent()
+	 * @see #getCompositeProcess()
+	 * @generated
+	 */
+	EReference getCompositeProcess_Component();
 
 	/**
 	 * Returns the meta object for class '{@link forsyde.Signal <em>Signal</em>}'.
@@ -1114,6 +1192,24 @@ public interface ForsydePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link forsyde.impl.systemImpl <em>system</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see forsyde.impl.systemImpl
+		 * @see forsyde.impl.ForsydePackageImpl#getsystem()
+		 * @generated
+		 */
+		EClass SYSTEM = eINSTANCE.getsystem();
+
+		/**
+		 * The meta object literal for the '<em><b>Process Networks</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM__PROCESS_NETWORKS = eINSTANCE.getsystem_ProcessNetworks();
+
+		/**
 		 * The meta object literal for the '{@link forsyde.impl.ProcessNetworkImpl <em>Process Network</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1224,6 +1320,14 @@ public interface ForsydePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPOSITE_PROCESS__PORTS = eINSTANCE.getCompositeProcess_Ports();
+
+		/**
+		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITE_PROCESS__COMPONENT = eINSTANCE.getCompositeProcess_Component();
 
 		/**
 		 * The meta object literal for the '{@link forsyde.impl.SignalImpl <em>Signal</em>}' class.

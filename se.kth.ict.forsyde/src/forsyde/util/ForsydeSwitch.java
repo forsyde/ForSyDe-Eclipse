@@ -13,6 +13,7 @@ import forsyde.Signal;
 import forsyde.inputPort;
 import forsyde.outputPort;
 
+import forsyde.system;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -75,6 +76,12 @@ public class ForsydeSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case ForsydePackage.SYSTEM: {
+				system system = (system)theEObject;
+				T result = casesystem(system);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ForsydePackage.PROCESS_NETWORK: {
 				ProcessNetwork processNetwork = (ProcessNetwork)theEObject;
 				T result = caseProcessNetwork(processNetwork);
@@ -141,6 +148,21 @@ public class ForsydeSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>system</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>system</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casesystem(system object) {
+		return null;
 	}
 
 	/**

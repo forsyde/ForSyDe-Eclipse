@@ -7,6 +7,9 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 
 Package forsyde <http://forsyde.ict.kth.se/core/forsyde>
 
+  Class system
+    Reference processNetworks : ProcessNetwork<<1..*>>
+
   Class ProcessNetwork
     Attribute name : EString
     Reference ports : Port<<0..*>>
@@ -23,6 +26,7 @@ Package forsyde <http://forsyde.ict.kth.se/core/forsyde>
 
   Class CompositeProcess -> Process
     Reference ports : Port<<0..*>>
+    Reference component : ProcessNetwork<<1..1>>
 
   Class Signal
     Attribute name : EString
