@@ -1,0 +1,135 @@
+-- @path forsyde=/se.kth.ict.forsyde/forsyde.ecore
+
+module MapMerge;
+create OUT : forsyde from IN : forsyde;
+
+rule UpdateSystem {
+	from
+		ss : forsyde!System
+	to 
+		ts : forsyde!System (
+			processNetworks <- ss.processNetworks
+		)
+}
+
+rule CopyProcessNetwork {
+	from
+		spn : forsyde!ProcessNetwork
+	to 
+		tpn : forsyde!ProcessNetwork (
+			name <- spn.name,
+			ports <- spn.ports,
+			signals <- spn.signals,
+			processes <- spn.processes
+		)
+}
+
+-- Can use rule inheritence for the following two?
+rule CopyInputPort {
+	from
+		sp : forsyde!InputPort (thisModule.removedProcs->excludes(sp.refImmediateComposite()))
+	to 
+		tp : forsyde!InputPort (
+			name <- sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc,
+			boundProcess <- sp.boundProcess,-- Fix!
+			boundPort <- sp.boundPort-- Fix!
+		)
+}
+
+rule CopyOutputPort {
+	from
+		sp : forsyde!OutputPort (thisModule.removedProcs->excludes(sp.refImmediateComposite()))
+	to 
+		tp : forsyde!OutputPort (
+			name <- sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc,
+			boundProcess <- thisModule.trackConnection(sp.boundProcess).refImmediateComposite(),
+			boundPort <- thisModule.trackConnection(sp.boundPort)
+		)
+}
+
+rule CopySignal {
+	from
+		sp : forsyde!Signal (thisModule.removedSignals->excludes(sp))
+	to 
+		tp : forsyde!Signal (
+			name <- sp.sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc,
+			sourceProcess <- thisModule.trackConnection(sp.sourcePort).refImmediateComposite(),--FIXME: point to where?
+			sourcePort <- thisModule.trackConnection(sp.sourcePort),
+			targetProcess <- thisModule.trackConnection(sp.targetPort).refImmediateComposite(),--FIXME: point to where?
+			targetPort <- thisModule.trackConnection(sp.targetPort)
+		)
+}
+
+rule CopyLeafProcess {
+	from
+		sp : forsyde!LeafProcess (thisModule.removedProcs->excludes(sp))
+	to 
+		tp : forsyde!LeafProcess (
+			name <- sp.genHierarchicalName(sp.name),
+			processConstructor <- sp.processConstructor,
+			constructorArguments <- sp.constructorArguments,
+			ports <- sp.ports
+		)
+}
+
+rule CopyProcessConstructor {
+	from
+		spc : forsyde!ProcessConstructor (thisModule.removedProcs->excludes(spc.refImmediateComposite()))
+	to 
+		tpc : forsyde!ProcessConstructor (
+			name <- spc.name,
+			moc <- spc.moc
+		)
+}
+
+rule CopyConstructorArgument {
+	from
+		sca : forsyde!ConstructorArgument (thisModule.removedProcs->excludes(sca.refImmediateComposite()))
+	to 
+		tca : forsyde!ConstructorArgument (
+			name <- sca.name,
+			type <- sca.type,
+			value <- sca.value
+		)
+}
+
+helper def : trackConnection(inp: forsyde!Port) : forsyde!Port =
+	if thisModule.removedProcs->includes(inp.refImmediateComposite()) then
+		thisModule.trackConnection(inp.refImmediateComposite().ports->reject(inp)->first()
+			
+		)
+	else
+		
+	endif
+--	if inp.refImmediateComposite().oclIsTypeOf(forsyde!LeafProcess) then
+--		inp
+--	else
+--		thisModule.trackConnection(inp.refImmediateComposite().component.ports->at(inp.refImmediateComposite().ports->indexOf(inp)).boundPort)
+--	endif
+	;
+
+helper def : removedProcs : Set(forsyde!LeafProcess) =
+	forsyde!LeafProcess.allInstances()->select(lp | lp.processConstructor.name.startsWith('comb'))
+	->collect(cp | cp.mergeCandidates())
+	;
+
+helper context forsyde!LeafProcess def : mergeCandidates() : Set(forsyde!LeafProcess) =
+	let candidateProc : forsyde!LeafProcess = 
+		self.refImmediateComposite().processes
+		->select(lp | lp.oclIsTypeOf(forsyde!LeafProcess).and(lp.processConstructor.name='comb') )
+		->select(cp | self.refImmediateComposite().signals->exists(s | s.sourceProcess=self and s.targetPort=cp))->first()
+	in
+		if candidateProc.oclIsUndefined()	then
+			Set{}
+		else
+			Set{candidateProc}.union(candidateProc.mergeCandidates())
+		endif
+	;
+
+helper def : removedSignals : Set(forsyde!Signal) = Set{};

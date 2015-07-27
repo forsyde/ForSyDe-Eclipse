@@ -1,0 +1,139 @@
+-- @path forsyde=/se.kth.ict.forsyde/forsyde.ecore
+
+module DuplicateProcessNetworks;
+create OUT : forsyde from IN : forsyde;
+
+-- Add the newly generated process networks as the result of component instantiation
+rule UpdateSystem {
+	from
+		ss : forsyde!System
+	to 
+		ts : forsyde!System (
+			processNetworks <- ss.processNetworks->first().instantiateComponents()
+		)
+}
+
+-- For each composite process in the hierarchy, create a copy of each corresponding process network
+-- in depth-first order. 
+helper context forsyde!ProcessNetwork def : instantiateComponents() : Sequence(forsyde!ProcessNetwork) =
+	Sequence{thisModule.CopyProcessNetwork(self)}->union(
+		self.processes->select(p | p.oclIsTypeOf(forsyde!CompositeProcess))
+			->collect(cp | cp.component.instantiateComponents())
+	)
+	;
+
+lazy rule CopyProcessNetwork {
+	from
+		spn : forsyde!ProcessNetwork
+	to 
+		tpn : forsyde!ProcessNetwork (
+			name <- spn.name,
+			ports <- spn.ports->collect(p | if p.oclIsTypeOf(forsyde!InputPort) then
+												thisModule.CopyInputPort(p)
+											else
+												thisModule.CopyOutputPort(p)
+											endif
+										),
+			signals <- spn.signals->collect(s | thisModule.CopySignal(s)),
+			processes <- spn.processes->collect(p | if p.oclIsTypeOf(forsyde!LeafProcess) then
+														thisModule.CopyLeafProcess(p)
+													else
+														thisModule.CopyCompositeProcess(p)
+													endif
+												)
+		)
+}
+
+-- Can use rule inheritence for the following two?
+lazy rule CopyInputPort {
+	from
+		sp : forsyde!InputPort
+	to 
+		tp : forsyde!InputPort (
+			name <- sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc--,
+--			boundProcess <- sp.boundProcess,
+--			boundPort <- sp.boundPort
+		)
+}
+
+lazy rule CopyOutputPort {
+	from
+		sp : forsyde!OutputPort
+	to 
+		tp : forsyde!OutputPort (
+			name <- sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc--,
+--			boundProcess <- sp.boundProcess,
+--			boundPort <- sp.boundPort
+		)
+}
+
+lazy rule CopySignal {
+	from
+		sp : forsyde!Signal
+	to 
+		tp : forsyde!Signal (
+			name <- sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc--,
+--			sourceProcess <- sp.sourceProcess,--FIXME: point to where?
+--			sourcePort <- sp.sourcePort,--FIXME: point to where?
+--			targetProcess <- sp.targetProcess,--FIXME: point to where?
+--			targetPort <- sp.targetPort--FIXME: point to where?
+		)
+}
+
+lazy rule CopyLeafProcess {
+	from
+		sp : forsyde!LeafProcess
+	to 
+		tp : forsyde!LeafProcess (
+			name <- sp.name,
+			processConstructor <- thisModule.CopyProcessConstructor(sp.processConstructor),
+			constructorArguments <- sp.constructorArguments->collect(ca | thisModule.CopyConstructorArgument(ca)),
+			ports <- sp.ports->collect(p | 	if p.oclIsTypeOf(forsyde!InputPort) then
+												thisModule.CopyInputPort(p)
+											else
+												thisModule.CopyOutputPort(p)
+											endif)
+		)
+}
+
+lazy rule CopyProcessConstructor {
+	from
+		spc : forsyde!ProcessConstructor
+	to 
+		tpc : forsyde!ProcessConstructor (
+			name <- spc.name,
+			moc <- spc.moc
+		)
+}
+
+lazy rule CopyConstructorArgument {
+	from
+		sca : forsyde!ConstructorArgument
+	to 
+		tca : forsyde!ConstructorArgument (
+			name <- sca.name,
+			type <- sca.type,
+			value <- sca.value
+		)
+}
+
+lazy rule CopyCompositeProcess {
+	from
+		scp : forsyde!CompositeProcess
+	to
+		tcp : forsyde!CompositeProcess (
+			name <- scp.name,
+--			component <- scp.component,--FIXME: point to where?
+			ports <- scp.ports->collect(p | if p.oclIsTypeOf(forsyde!InputPort) then
+												thisModule.CopyInputPort(p)
+											else
+												thisModule.CopyOutputPort(p)
+											endif)
+		)
+}

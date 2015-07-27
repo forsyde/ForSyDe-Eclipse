@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<se.kth.ict.forsyde.core:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:se.kth.ict.forsyde.core="http://forsyde.ict.kth.se/core/forsyde">
+  <processNetworks name="pn3">
+    <ports xsi:type="se.kth.ict.forsyde.core:InputPort" name="i1" moc="SY" dataType="int" boundProcess="//@processNetworks.0/@processes.1" boundPort="//@processNetworks.0/@processes.1/@ports.0"/>
+    <ports xsi:type="se.kth.ict.forsyde.core:OutputPort" name="out1" moc="SY" dataType="int" boundProcess="//@processNetworks.0/@processes.2" boundPort="//@processNetworks.0/@processes.2/@ports.1"/>
+    <ports xsi:type="se.kth.ict.forsyde.core:OutputPort" name="out2" moc="SY" dataType="int" boundProcess="//@processNetworks.0/@processes.0" boundPort="//@processNetworks.0/@processes.0/@ports.1"/>
+    <ports xsi:type="se.kth.ict.forsyde.core:OutputPort" name="out3" moc="SY" dataType="int" boundProcess="//@processNetworks.0/@processes.4" boundPort="//@processNetworks.0/@processes.4/@ports.1"/>
+    <ports xsi:type="se.kth.ict.forsyde.core:InputPort" name="i2" moc="SY" dataType="int" boundProcess="//@processNetworks.0/@processes.0" boundPort="//@processNetworks.0/@processes.0/@ports.0"/>
+    <ports xsi:type="se.kth.ict.forsyde.core:InputPort" name="i3" moc="SY" dataType="int" boundProcess="//@processNetworks.0/@processes.3" boundPort="//@processNetworks.0/@processes.3/@ports.0"/>
+    <processes xsi:type="se.kth.ict.forsyde.core:LeafProcess" name="c1_l3">
+      <ports xsi:type="se.kth.ict.forsyde.core:InputPort" name="i1" moc="SY" dataType="int"/>
+      <ports xsi:type="se.kth.ict.forsyde.core:OutputPort" name="out1" moc="SY" dataType="int"/>
+      <processConstructor name="mealy" moc="SY"/>
+    </processes>
+    <processes xsi:type="se.kth.ict.forsyde.core:LeafProcess" name="c1_c1_l1">
+      <ports xsi:type="se.kth.ict.forsyde.core:InputPort" name="i1" moc="SY" dataType="int"/>
+      <ports xsi:type="se.kth.ict.forsyde.core:OutputPort" name="out1" moc="SY" dataType="int"/>
+      <processConstructor name="comb" moc="SY"/>
+    </processes>
+    <processes xsi:type="se.kth.ict.forsyde.core:LeafProcess" name="c1_c1_l2">
+      <ports xsi:type="se.kth.ict.forsyde.core:InputPort" name="i1" moc="SY" dataType="int"/>
+      <ports xsi:type="se.kth.ict.forsyde.core:OutputPort" name="out1" moc="SY" dataType="int"/>
+      <processConstructor name="delay" moc="SY"/>
+    </processes>
+    <processes xsi:type="se.kth.ict.forsyde.core:LeafProcess" name="c2_l1">
+      <ports xsi:type="se.kth.ict.forsyde.core:InputPort" name="i1" moc="SY" dataType="int"/>
+      <ports xsi:type="se.kth.ict.forsyde.core:OutputPort" name="out1" moc="SY" dataType="int"/>
+      <processConstructor name="comb" moc="SY"/>
+    </processes>
+    <processes xsi:type="se.kth.ict.forsyde.core:LeafProcess" name="c2_l2">
+      <ports xsi:type="se.kth.ict.forsyde.core:InputPort" name="i1" moc="SY" dataType="int"/>
+      <ports xsi:type="se.kth.ict.forsyde.core:OutputPort" name="out1" moc="SY" dataType="int"/>
+      <processConstructor name="delay" moc="SY"/>
+    </processes>
+    <signals name="c1_c1_s1" moc="SY" dataType="int" sourceProcess="//@processNetworks.0/@processes.1" sourcePort="//@processNetworks.0/@processes.1/@ports.1" targetProcess="//@processNetworks.0/@processes.2" targetPort="//@processNetworks.0/@processes.2/@ports.0"/>
+    <signals name="c2_s1" moc="SY" dataType="int" sourceProcess="//@processNetworks.0/@processes.3" sourcePort="//@processNetworks.0/@processes.3/@ports.1" targetProcess="//@processNetworks.0/@processes.4" targetPort="//@processNetworks.0/@processes.4/@ports.0"/>
+  </processNetworks>
+</se.kth.ict.forsyde.core:System>

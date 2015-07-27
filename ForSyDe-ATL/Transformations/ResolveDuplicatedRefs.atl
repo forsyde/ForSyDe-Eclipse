@@ -1,0 +1,179 @@
+-- @path forsyde=/se.kth.ict.forsyde/forsyde.ecore
+
+module ResolveDuplicatedRefs;
+create OUT : forsyde from IN : forsyde, INDUP : forsyde;
+
+rule UpdateSystem {
+	from
+		ss : forsyde!System (forsyde!System.allInstancesFrom('INDUP')->includes(ss))
+	to 
+		ts : forsyde!System (
+			processNetworks <- ss.processNetworks
+		)
+}
+
+rule CopyProcessNetwork {
+	from
+		spn : forsyde!ProcessNetwork (forsyde!ProcessNetwork.allInstancesFrom('INDUP')->includes(spn))
+	to 
+		tpn : forsyde!ProcessNetwork (
+			name <- spn.name,
+			ports <- spn.ports,
+			signals <- spn.signals,
+			processes <- spn.processes
+		)
+}
+
+-- Can use rule inheritence for the following two?
+		
+-- FIXME: The following code needs refactoring 
+rule CopyInputPort {
+	from
+		sp : forsyde!InputPort (forsyde!InputPort.allInstancesFrom('INDUP')->includes(sp))
+	using {
+		op: forsyde!InputPort = forsyde!InputPort.allInstancesFrom('IN')->select(ip | 
+				sp.refImmediateComposite().name = ip.refImmediateComposite().name and
+				sp.name = ip.name
+			)->first();-- FIXME: check is not precise
+		opn: forsyde!ProcessNetwork = forsyde!ProcessNetwork.allInstancesFrom('IN')->select(pn | pn.ports->includes(op))->first();
+	}
+	to 
+		tp : forsyde!InputPort (
+			name <- sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc,
+			boundProcess <- if sp.refImmediateComposite().oclIsTypeOf(forsyde!ProcessNetwork) then
+								sp.refImmediateComposite().processes->at(
+									opn.processes->indexOf(op.boundProcess)
+								)
+							else
+								OclUndefined
+							endif,
+			boundPort <- if sp.refImmediateComposite().oclIsTypeOf(forsyde!ProcessNetwork) then
+								sp.refImmediateComposite().processes
+									->at(opn.processes->indexOf(op.boundProcess)).ports
+									->at(op.boundProcess.ports->indexOf(op.boundPort))
+							else
+								OclUndefined
+							endif
+		)
+}
+
+-- FIXME: The following code needs refactoring 
+rule CopyOutputPort {
+	from
+		sp : forsyde!OutputPort (forsyde!OutputPort.allInstancesFrom('INDUP')->includes(sp))
+	using {
+		op: forsyde!OutputPort = forsyde!OutputPort.allInstancesFrom('IN')->select(ip | 
+				sp.refImmediateComposite().name = ip.refImmediateComposite().name and
+				sp.name = ip.name
+			)->first();-- FIXME: check is not precise
+		opn: forsyde!ProcessNetwork = forsyde!ProcessNetwork.allInstancesFrom('IN')->select(pn | pn.ports->includes(op))->first();
+	}
+		to 
+		tp : forsyde!OutputPort (
+			name <- sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc,
+			boundProcess <- if sp.refImmediateComposite().oclIsTypeOf(forsyde!ProcessNetwork) then
+								sp.refImmediateComposite().processes->at(
+									opn.processes->indexOf(op.boundProcess)
+								)
+							else
+								OclUndefined
+							endif,
+			boundPort <- if sp.refImmediateComposite().oclIsTypeOf(forsyde!ProcessNetwork) then
+								sp.refImmediateComposite().processes
+									->at(opn.processes->indexOf(op.boundProcess)).ports
+									->at(op.boundProcess.ports->indexOf(op.boundPort))
+							else
+								OclUndefined
+							endif
+		)
+}
+
+rule CopySignal {
+	from
+		sp : forsyde!Signal (forsyde!Signal.allInstancesFrom('INDUP')->includes(sp))
+	using {
+		os: forsyde!Signal = forsyde!Signal.allInstancesFrom('IN')->select(is | 
+				sp.refImmediateComposite().name = is.refImmediateComposite().name and
+				sp.name = is.name
+			)->first();-- FIXME: check is not precise
+		opn: forsyde!ProcessNetwork = forsyde!ProcessNetwork.allInstancesFrom('IN')->select(pn | pn.signals->includes(os))->first();
+	}
+	to 
+		tp : forsyde!Signal (
+			name <- sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc,
+			sourceProcess <- sp.refImmediateComposite().processes->at(opn.processes->indexOf(os.sourceProcess)),
+			sourcePort <- sp.refImmediateComposite().processes
+							->at(opn.processes->indexOf(os.sourceProcess)).ports
+							->at(os.sourceProcess.ports->indexOf(os.sourcePort)),-- FIXME
+			targetProcess <- sp.refImmediateComposite().processes->at(opn.processes->indexOf(os.targetProcess)),
+			targetPort <- sp.refImmediateComposite().processes
+							->at(opn.processes->indexOf(os.targetProcess)).ports
+							->at(os.targetProcess.ports->indexOf(os.targetPort))-- FIXME
+		)
+}
+
+rule CopyLeafProcess {
+	from
+		sp : forsyde!LeafProcess (forsyde!LeafProcess.allInstancesFrom('INDUP')->includes(sp))
+	to 
+		tp : forsyde!LeafProcess (
+			name <- sp.name,
+			processConstructor <- sp.processConstructor,
+			constructorArguments <- sp.constructorArguments,
+			ports <- sp.ports
+		)
+}
+
+rule CopyProcessConstructor {
+	from
+		spc : forsyde!ProcessConstructor (forsyde!ProcessConstructor.allInstancesFrom('INDUP')->includes(spc))
+	to 
+		tpc : forsyde!ProcessConstructor (
+			name <- spc.name,
+			moc <- spc.moc
+		)
+}
+
+rule CopyConstructorArgument {
+	from
+		sca : forsyde!ConstructorArgument (forsyde!ConstructorArgument.allInstancesFrom('INDUP')->includes(sca))
+	to 
+		tca : forsyde!ConstructorArgument (
+			name <- sca.name,
+			type <- sca.type,
+			value <- sca.value
+		)
+}
+
+rule CopyCompositeProcess {
+	from
+		scp : forsyde!CompositeProcess (forsyde!CompositeProcess.allInstancesFrom('INDUP')->includes(scp))
+	using {
+		ocp: forsyde!CompositeProcess = forsyde!CompositeProcess.allInstancesFrom('IN')->select(icp | 
+				scp.refImmediateComposite().name = icp.refImmediateComposite().name and
+				scp.name = icp.name
+			)->first();
+	}
+	to
+		tcp : forsyde!CompositeProcess (
+			name <- scp.name,
+			component <- forsyde!System.allInstancesFrom('INDUP')->first().processNetworks->at(
+					forsyde!System.allInstancesFrom('IN')->first().processNetworks->at(1).getAllComposites->indexOf(ocp)+1
+				),
+			ports <- scp.ports
+		)
+}
+
+-- Get all Composite processes in the hierarchy according to depth-first order
+helper context forsyde!ProcessNetwork def : getAllComposites : Sequence(forsyde!CompositeProcess) =
+	self.processes->select(p | p.oclIsTypeOf(forsyde!CompositeProcess))
+		->iterate( cp ; cps : Sequence(forsyde!CompositeProcess) = 
+			Sequence{} | cps.append(cp).union(cp.component.getAllComposites)
+		)
+	;

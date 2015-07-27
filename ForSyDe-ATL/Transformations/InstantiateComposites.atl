@@ -1,0 +1,167 @@
+-- @path forsyde=/se.kth.ict.forsyde/forsyde.ecore
+
+module InstantiateComposites;
+create OUT : forsyde from IN : forsyde;
+
+rule UpdateSystem {
+	from
+		ss : forsyde!System
+	to 
+		ts : forsyde!System (
+			processNetworks <- ss.processNetworks->first()
+		)
+}
+
+rule CopyProcessNetwork {
+	from
+		spn : forsyde!ProcessNetwork (forsyde!ProcessNetwork.allInstances()->first()=spn)
+	to 
+		tpn : forsyde!ProcessNetwork (
+			name <- spn.name,
+			ports <- spn.ports,
+			signals <- forsyde!Signal.allInstances(),
+			processes <- forsyde!LeafProcess.allInstances()
+		)
+}
+
+-- Can use rule inheritence for the following two?
+rule CopyInputPort {
+	from
+		sp : forsyde!InputPort (sp.refImmediateComposite().oclIsTypeOf(forsyde!LeafProcess) or
+					sp.refImmediateComposite() = forsyde!ProcessNetwork.allInstances()->first()
+				)
+	to 
+		tp : forsyde!InputPort (
+			name <- sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc,
+			boundProcess <- if sp.refImmediateComposite() = forsyde!ProcessNetwork.allInstances()->first() then
+							thisModule.trackConnection(sp.boundPort).refImmediateComposite()
+						else
+							OclUndefined
+						endif,
+			boundPort <- if sp.refImmediateComposite() = forsyde!ProcessNetwork.allInstances()->first() then
+							thisModule.trackConnection(sp.boundPort)
+						else
+							OclUndefined
+						endif
+		)
+}
+
+rule CopyOutputPort {
+	from
+		sp : forsyde!OutputPort (sp.refImmediateComposite().oclIsTypeOf(forsyde!LeafProcess) or
+					sp.refImmediateComposite() = forsyde!ProcessNetwork.allInstances()->first()
+				)
+	to 
+		tp : forsyde!OutputPort (
+			name <- sp.name,
+			dataType <- sp.dataType,
+			moc <- sp.moc,
+			boundProcess <- if sp.refImmediateComposite() = forsyde!ProcessNetwork.allInstances()->first() then
+							thisModule.trackConnection(sp.boundPort).refImmediateComposite()
+						else
+							OclUndefined
+						endif,
+			boundPort <- if sp.refImmediateComposite() = forsyde!ProcessNetwork.allInstances()->first() then
+							thisModule.trackConnection(sp.boundPort)
+						else
+							OclUndefined
+						endif
+		)
+}
+
+rule CopySignal {
+	from
+		sp : forsyde!Signal
+	to 
+		tp : forsyde!Signal (
+			name <- sp.genHierarchicalName(sp.name),
+			dataType <- sp.dataType,
+			moc <- sp.moc,
+			sourceProcess <- thisModule.trackConnection(sp.sourcePort).refImmediateComposite(),--FIXME: point to where?
+			sourcePort <- thisModule.trackConnection(sp.sourcePort),
+			targetProcess <- thisModule.trackConnection(sp.targetPort).refImmediateComposite(),--FIXME: point to where?
+			targetPort <- thisModule.trackConnection(sp.targetPort)
+		)
+}
+
+rule CopyLeafProcess {
+	from
+		sp : forsyde!LeafProcess
+	to 
+		tp : forsyde!LeafProcess (
+			name <- sp.genHierarchicalName(sp.name),
+			processConstructor <- sp.processConstructor,
+			constructorArguments <- sp.constructorArguments,
+			ports <- sp.ports
+		)
+}
+
+rule CopyProcessConstructor {
+	from
+		spc : forsyde!ProcessConstructor
+	to 
+		tpc : forsyde!ProcessConstructor (
+			name <- spc.name,
+			moc <- spc.moc
+		)
+}
+
+rule CopyConstructorArgument {
+	from
+		sca : forsyde!ConstructorArgument
+	to 
+		tca : forsyde!ConstructorArgument (
+			name <- sca.name,
+			type <- sca.type,
+			value <- sca.value
+		)
+}
+
+helper def : trackConnection(inp: forsyde!Port) : forsyde!Port =
+	if inp.refImmediateComposite().oclIsTypeOf(forsyde!LeafProcess) then
+		inp
+	else
+		thisModule.trackConnection(inp.refImmediateComposite().component.ports->at(inp.refImmediateComposite().ports->indexOf(inp)).boundPort)
+	endif
+	;
+
+helper context forsyde!Signal def : genHierarchicalName(hname: String) : String = 
+	if self.refImmediateComposite()=forsyde!System.allInstances()->first().processNetworks->first() then
+		-- already at top level: terminate recursion
+		hname
+	else
+		let topComposite : forsyde!CompositeProcess = 
+				forsyde!CompositeProcess.allInstances()
+				->select(cp | cp.component.processes->includes(self) or cp.component.signals->includes(self))->first()
+		in
+			topComposite.genHierarchicalName(topComposite.name + '_' + hname)
+	endif
+	;
+
+helper context forsyde!CompositeProcess def : genHierarchicalName(hname: String) : String = 
+	if self.refImmediateComposite()=forsyde!System.allInstances()->first().processNetworks->first() then
+		-- already at top level: terminate recursion
+		hname
+	else
+		let topComposite : forsyde!CompositeProcess = 
+				forsyde!CompositeProcess.allInstances()
+				->select(cp | cp.component.processes->includes(self) or cp.component.signals->includes(self))->first()
+		in
+			topComposite.genHierarchicalName(topComposite.name + '_' + hname)
+	endif
+	;
+
+helper context forsyde!LeafProcess def : genHierarchicalName(hname: String) : String = 
+	if self.refImmediateComposite()=forsyde!System.allInstances()->first().processNetworks->first() then
+		-- already at top level: terminate recursion
+		hname
+	else
+		let topComposite : forsyde!CompositeProcess = 
+				forsyde!CompositeProcess.allInstances()
+				->select(cp | cp.component.processes->includes(self) or cp.component.signals->includes(self))->first()
+		in
+			topComposite.genHierarchicalName(topComposite.name + '_' + hname)
+	endif
+	;
