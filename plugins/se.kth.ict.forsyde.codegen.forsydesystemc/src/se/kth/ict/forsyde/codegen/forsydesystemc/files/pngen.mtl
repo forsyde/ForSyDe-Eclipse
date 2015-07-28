@@ -1,9 +1,7 @@
 [comment encoding = UTF-8 /]
-[module generate('http://forsyde.ict.kth.se/core/forsyde')]
+[module pngen('http://forsyde.ict.kth.se/core/forsyde')]
 
-[template public generateElement(aSystem : System)]
-[comment @main/]
-[for (pn : ProcessNetwork | aSystem.processNetworks)]
+[template public generateProcessNetwork(pn : ProcessNetwork)]
 [file (pn.name.concat('.hpp'), false, 'UTF-8')]
 #include "forsyde.hpp"
 [comment including the module containing the process network for composite processes /]
@@ -75,7 +73,6 @@ SC_MODULE([pn.name/])
     }
 };
 [/file]
-[/for]
 [/template]
 
 [template public portDir(port : Port) post (trim())]
