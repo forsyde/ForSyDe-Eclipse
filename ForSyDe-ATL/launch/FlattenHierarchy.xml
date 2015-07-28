@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<project name="ForSyDe-ATL" default="run" basedir="..">
+	<property name="systemName" value="testsys" />
+	<property name="samplePath" value="Samples" />
+	<property name="resultPath" value="Results" />
+
+	<target name="run">
+		<atl.loadModel modelHandler="EMF" name="forsyde" metamodel="MOF" path="Metamodels/forsyde.ecore" />
+		<atl.loadModel modelHandler="EMF" name="IN" metamodel="forsyde" path="${samplePath}/${systemName}.forsyde" />
+
+		<atl.launch path="./Transformations/DuplicateProcessNetworks.asm">
+			<inmodel name="IN" model="IN"/>			
+ 			<outmodel name="OUT" model="DUPED" metamodel="forsyde"/>
+		</atl.launch>
+		<atl.launch path="./Transformations/ResolveDuplicatedRefs.asm">
+			<inmodel name="IN" model="IN"/>
+			<inmodel name="INDUP" model="DUPED"/>
+		 	<outmodel name="OUT" model="DUPRESOLVED" metamodel="forsyde"/>
+		</atl.launch>
+		<atl.launch path="./Transformations/InstantiateComposites.asm">
+			<inmodel name="IN" model="DUPRESOLVED"/>
+		 	<outmodel name="OUT" model="OUT" metamodel="forsyde"/>
+		</atl.launch>
+
+		<atl.saveModel model="OUT" path="${resultPath}/${systemName}-flattened.forsyde" />
+	</target>
+</project>
