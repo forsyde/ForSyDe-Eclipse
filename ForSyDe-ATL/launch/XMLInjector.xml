@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project name="ForSyDe-ATL" default="run" basedir="..">
+	<property name="xmlName" value="mulacc" />
+	<property name="xmlPath" value="Samples" />
+	<property name="resultPath" value="Results" />
+
+	<target name="run">
+		<atl.loadModel modelHandler="EMF" name="XML" metamodel="MOF" nsURI="http://www.eclipse.org/am3/2007/XML" />
+		<atl.loadModel modelHandler="XML" name="IN" metamodel="XML" path="${xmlPath}/${xmlName}.xml">
+			<injector name="XML" />
+		</atl.loadModel>		
+
+		<atl.saveModel model="IN" path="${resultPath}/${xmlName}.xml" />
+	</target>
+</project>

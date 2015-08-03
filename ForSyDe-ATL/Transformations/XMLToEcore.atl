@@ -1,0 +1,156 @@
+-- @nsURI forsyde=http://forsyde.ict.kth.se/core/forsyde
+-- @nsURI XML=http://www.eclipse.org/am3/2007/XML
+
+module XMLToEcore;
+create OUT : forsyde from IN : XML;
+
+rule RootToSystem {
+	from
+		sr : XML!Root
+	to 
+		ts : forsyde!System (
+			processNetworks <- sr.children->select(e | e.name='process_network')
+		)
+}
+
+rule ProcessNetworks {
+	from
+		spn : XML!Element (spn.name='process_network')
+	to 
+		tpn : forsyde!ProcessNetwork (
+			name <- spn.attribute('name').value,
+			ports <- spn.children->select(e | e.name='port'),
+			processes <- spn.children->select(e | e.name='leaf_process' or e.name='composite_process'),
+			signals <- spn.children->select(e | e.name='signal')
+		)
+}
+
+rule InPorts {
+	from
+		sp : XML!Element ((sp.name='port') and (let 
+				pdir : XML!Attribute = sp.children->select(a | a.name='direction')->first() in
+				if pdir.oclIsUndefined() then false else pdir.value='in' endif))
+	to 
+		tp : forsyde!InputPort (
+			name <- sp.attribute('name').value,
+			moc <- let pmoc : XML!Element = sp.attribute('moc') in
+					if pmoc.oclIsUndefined() then OclUndefined else pmoc.value endif,
+			dataType <- sp.attribute('type').value,
+			boundProcess <- if sp.parent.name='process_network' then
+								thisModule.findProc(sp, 'bound_process')
+							else
+								OclUndefined
+							endif,
+			boundPort <- if sp.parent.name='process_network' then
+							thisModule.findPort(sp, 'bound_process', 'bound_port')
+						else
+							OclUndefined
+						endif
+		)
+}
+
+rule OutPorts {
+	from
+		sp : XML!Element ((sp.name='port') and (let 
+				pdir : XML!Attribute = sp.attribute('direction') in
+				if pdir.oclIsUndefined() then false else pdir.value='out' endif))
+	to 
+		tp : forsyde!OutputPort (
+			name <- sp.attribute('name').value,
+			moc <- let pmoc : XML!Element = sp.attribute('moc') in
+					if pmoc.oclIsUndefined() then OclUndefined else pmoc.value endif,
+			dataType <- sp.attribute('type').value,
+			boundProcess <- if sp.parent.name='process_network' then
+								thisModule.findProc(sp, 'bound_process')
+							else
+								OclUndefined
+							endif,
+			boundPort <- if sp.parent.name='process_network' then
+							thisModule.findPort(sp, 'bound_process', 'bound_port')
+						else
+							OclUndefined
+						endif
+		)
+}
+
+rule Signals {
+	from
+		ss : XML!Element (ss.name='signal')
+	to 
+		tp : forsyde!Signal (
+			name <- ss.attribute('name').value,
+			moc <- thisModule.mocStrToEnum(ss.attribute('moc').value),
+			dataType <- ss.attribute('type').value,
+			sourceProcess <- thisModule.findProc(ss, 'source'),
+			sourcePort <- thisModule.findPort(ss, 'source', 'source_port'),
+			targetProcess <- thisModule.findProc(ss, 'target'),
+			targetPort <- thisModule.findPort(ss, 'target', 'target_port')
+		)
+}
+
+rule LeafProcesses {
+	from
+		sp : XML!Element (sp.name='leaf_process')
+	to 
+		tp : forsyde!LeafProcess (
+			name <- sp.attribute('name').value,
+			ports <- sp.children->select(e | e.name='port'),
+			processConstructor <- sp.attribute('process_constructor'),
+			constructorArguments <- sp.attribute('process_constructor').children->select(a | a.name='argument')
+		)
+}
+
+rule ProcessConstructor {
+	from
+		sc : XML!Element (sc.name='process_constructor')
+	to 
+		tc : forsyde!ProcessConstructor (
+			name <- sc.attribute('name').value,
+			moc <- thisModule.mocStrToEnum(sc.attribute('moc').value)
+		)
+}
+
+rule ConstructorArgument {
+	from
+		sa : XML!Element (sa.name='argument')
+	to 
+		ta : forsyde!ConstructorArgument (
+			name <- sa.attribute('name').value,
+			type <- let ptype : XML!Element = sa.attribute('type') in
+					if ptype.oclIsUndefined() then OclUndefined else ptype.value endif,
+			value <- sa.attribute('value').value
+		)
+}
+
+rule CompositeProcess {
+	from
+		sp : XML!Element (sp.name='composite_process')
+	to 
+		tp : forsyde!CompositeProcess (
+			name <- sp.attribute('name').value,
+			component <- XML!Root.allInstances()->first().children->select(c | c.oclIsTypeOf(XML!Element))
+					->select(pn | pn.attribute('name').value=
+						sp.attribute('component_name').value
+					)->first(),
+			ports <- sp.children->select(e | e.name='port')
+		)
+}
+
+helper context XML!Element def : attribute(attName: String) : XML!Attribute = 
+	self.children->select(a | a.name=attName)->first()
+;
+
+
+helper def : mocStrToEnum(str:String) : forsyde!MoC = 
+	OrderedSet{#UT,#SDF,#SY,#T,#DDE,#CT}->select(m | m.toString()=str.toUpper())->first()
+;
+
+helper def : findProc(ss : XML!Element, lookupProcess : String) : XML!Element = 
+	ss.parent.children->select(e | e.oclIsTypeOf(XML!Element))
+		->select(p | p.attribute('name').value = ss.attribute(lookupProcess).value)->first()
+;
+
+helper def : findPort(ss : XML!Element, lookupProcess : String, lookupPort : String) : XML!Element = 
+	thisModule.findProc(ss, lookupProcess).children->select(p | p.name = 'port')
+		->select(p | p.attribute('name').value = ss.attribute(lookupPort).value)->first()
+;
