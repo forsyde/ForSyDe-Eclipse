@@ -6,10 +6,16 @@
 
 	<target name="run">
 		<atl.loadModel modelHandler="EMF" name="XML" metamodel="MOF" nsURI="http://www.eclipse.org/am3/2007/XML" />
+		<atl.loadModel modelHandler="EMF" name="forsyde" metamodel="MOF" nsURI="http://forsyde.ict.kth.se/core/forsyde" />
+		
 		<atl.loadModel modelHandler="XML" name="IN" metamodel="XML" path="${xmlPath}/${xmlName}.xml">
 			<injector name="XML" />
-		</atl.loadModel>		
+		</atl.loadModel>
+		<atl.launch path="./Transformations/XMLToEcore.asm">
+				<inmodel name="IN" model="IN"/>			
+				<outmodel name="OUT" model="OUT" metamodel="forsyde"/>
+		</atl.launch>
 
-		<atl.saveModel model="IN" path="${resultPath}/${xmlName}.xml" />
+		<atl.saveModel model="OUT" path="${resultPath}/${xmlName}.forsyde" />
 	</target>
 </project>
