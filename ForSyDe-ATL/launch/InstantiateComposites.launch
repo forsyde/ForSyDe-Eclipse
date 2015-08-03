@@ -37,7 +37,7 @@
 <mapAttribute key="Path">
 <mapEntry key="IN" value="/ForSyDe-ATL/Results/testsys-dupresolved.forsyde"/>
 <mapEntry key="OUT" value="/ForSyDe-ATL/Results/testsys-flattened.forsyde"/>
-<mapEntry key="forsyde" value="/ForSyDe-ATL/Metamodels/forsyde.ecore"/>
+<mapEntry key="forsyde" value="uri:http://forsyde.ict.kth.se/core/forsyde"/>
 </mapAttribute>
 <listAttribute key="Superimpose"/>
 </launchConfiguration>

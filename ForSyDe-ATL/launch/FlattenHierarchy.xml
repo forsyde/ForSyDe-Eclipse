@@ -5,7 +5,7 @@
 	<property name="resultPath" value="Results" />
 
 	<target name="run">
-		<atl.loadModel modelHandler="EMF" name="forsyde" metamodel="MOF" path="Metamodels/forsyde.ecore" />
+		<atl.loadModel modelHandler="EMF" name="forsyde" metamodel="MOF" nsURI="http://forsyde.ict.kth.se/core/forsyde" />
 		<atl.loadModel modelHandler="EMF" name="IN" metamodel="forsyde" path="${samplePath}/${systemName}.forsyde" />
 
 		<atl.launch path="./Transformations/DuplicateProcessNetworks.asm">

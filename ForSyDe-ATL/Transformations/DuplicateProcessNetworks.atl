@@ -1,4 +1,4 @@
--- @path forsyde=/se.kth.ict.forsyde/forsyde.ecore
+-- @nsURI forsyde=http://forsyde.ict.kth.se/core/forsyde
 
 module DuplicateProcessNetworks;
 create OUT : forsyde from IN : forsyde;
