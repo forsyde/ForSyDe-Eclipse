@@ -14,4 +14,4 @@ The project consists of
 - Generation of [ForSyDe-SystemC](https://github.com/shaniaki/ForSyDe-SystemC)
 code from ForSyDe Ecore models using [Acceleo](http://www.eclipse.org/acceleo/).
 
-Consult the project's [wiki pages](wiki) for tutorials on how to use the tools.
+Consult the project's [wiki pages](../../wiki) for tutorials on how to use the tools.
